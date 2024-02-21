@@ -1,113 +1,119 @@
+import { cinzel } from "@/settings/fonts";
+import styles from "./styles.module.css"
 import Image from "next/image";
+import AthenaImg from '@/public/img/Athena IMG.png'
+import Card from "@/components/Card/Card";
+import { CardContent, CardContent2 } from "@/constants/constants";
+import Card2 from "@/components/Card-2";
+import Container from "@/components/Container";
+import Divider from "@/components/Divider";
+import HTML from '@/public/svg/Html-BW.svg'
+import Figma from '@/public/svg/Figma.svg'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main className="bg-black-custom flex flex-col text-white px-10  pb-40 xl:px-20 2xl:px-40 ">
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section className="flex flex-col mb-60">
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+        <Container className="z-10 mt-[6%] mb-20">
+          <h5 className="font-semibold text-2xl mb-10 max-[768px]:text-xl">VOCÊ ESTÁ PRONTO PARA ESTAR NO TOPO?</h5>
+          <h1 className={`text-8xl ${cinzel.className} font-bold mb-5 max-[768px]:text-6xl max-[1280px]:text-7xl`}>REVOLUCIONE</h1>
+          <h1 className={`text-7xl ${cinzel.className} font-bold mb-8 max-[768px]:text-5xl max-[1280px]:text-6xl`}>SUA PRESENÇA DIGITAL</h1>
+          <h6 className="text-xl max-[768px]:text-lg">SE POSICIONE NO MERCADO COM UM VISUAL ATRATIVO E <span className="text-red-500 font-semibold">DOMINE O JOGO!</span></h6>
+        </Container>
+
+        <Container className="z-10">
+          <h1 className={`text-8xl ${cinzel.className} ${styles.gradient45deg} w-fit max-[768px]:text-6xl max-[1280px]:text-7xl`}>athena</h1>
+          <h4 className='text-4xl font-thin mb-10 max-[768px]:text-2xl max-[1280px]:text-3xl'>SITES • SISTEMAS • MARKETING DIGITAL</h4>
+
+          <div className={`h-[5px] w-[80%] ${styles.gradient}`} />
+        </Container>
+
+        <Container className={`absolute right-10 bottom-0 ${styles.gradients} max-[900px]:right-0   max-[1280px]:bottom-[0px]`}>
+          <Image
+            src={AthenaImg}
+            alt="Imagem de Athena"
+
+          />
+        </Container>
+
+      </section>
+
+      <section className="flex flex-col mb-40">
+        <h2 className={`text-5xl ${cinzel.className} text-center mb-20 max-[1024px]:text-4xl`}>veja como podemos te ajudar</h2>
+
+        <Container className=" grid grid-cols-3 gap-10 mx-auto mb-20 max-[1024px]:grid-cols-1 max-[1280px]:grid-cols-2"> 
+          {CardContent.map((card) => {
+            return <Card key={card.title} img={card.image} title={card.title} content={card.content} />
+          })}
+        </Container>
+
+        <h5 className="font-bold text-xl text-center">E muito mais... Independente do tipo do seu negócio, nós temos a solução!</h5>
+      </section>
+ 
+      <section className="flex flex-col mb-40">
+        <h2 className={`text-5xl ${cinzel.className} mb-20 max-w-[600px] leading-tight max-[1024px]:text-4xl`}>
+          por que a <span className={`${styles.gradient45deg}`}>athena</span> é a opção certa para você?
+        </h2>
+
+        <Container className="flex flex-col">
+          {CardContent2.map(({ title, number, content }) => {
+            return <Card2 key={number} title={title} number={number} content={content} />
+          })}
+        </Container>
+      </section>
+
+      <section className="flex flex-col mb-40">
+        <Container className='flex justify-center items-center gap-20 mb-20 max-[800px]:flex-col max-[800px]:gap-5 max-[800px]:mb-10'>
+          <h2 className={`text-5xl ${cinzel.className} leading-tight font-semibold max-[800px]:mb-0 max-[1024px]:text-4xl `}>
+            tecnologias usadas
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <h6 className='w-[640px]  text-xl font-light max-[800px]:text-center max-[800px]:w-fit'>
+            A inocação é algo que nos inspira. Por isso estamos sempre buscando as mais novas tecnologias.
+            Conheça as tecnologias mais modernas que utilizamos para desenvolver nossos projetos
+          </h6>
+        </Container>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <Container >
+          <Divider className="bg-white mb-10" />
+
+          <Container className="flex items-center">
+            <h4 className="font-medium text-2xl mr-40">DESIGN</h4>
+
+            <Container className="flex gap-20">
+              <Container className="flex gap-4 items-center">
+                <Image
+                  src={HTML}
+                  alt='HTML'
+                />
+                <p className="text-xl font-light">HTML5</p>
+              </Container>
+
+              <Container className="flex gap-4 items-center">
+                <Image
+                  src={Figma}
+                  alt='HTML'
+                />
+                <p className="text-xl font-light">HTML5</p>
+              </Container>
+            </Container>
+
+
+
+          </Container>
+
+
+
+          <Divider className="bg-white mt-10" />
+        </Container>
+
+
+
+      </section>
+
     </main>
-  );
+  )
 }
